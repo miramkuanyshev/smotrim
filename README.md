@@ -1,1 +1,3 @@
 # smotrim
+
+#deploy SPA

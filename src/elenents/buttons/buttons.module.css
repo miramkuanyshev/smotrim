@@ -1,0 +1,38 @@
+.next {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+    background:#fff url('../../images/arrow.svg') no-repeat;
+    background-size: 24px;
+    border-radius: 80px;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    background-position: 50%;
+    top: 25%;
+    right: 0%;
+}
+
+.back {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+    background:#fff url('../../images/arrow.svg') no-repeat;
+    background-size: 24px;
+    border-radius: 80px;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    top: 25%;
+    background-position: 50%;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    z-index: 1;
+}
+
+.inactive {
+    display: none;
+}

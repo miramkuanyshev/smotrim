@@ -1,0 +1,26 @@
+.card-img__item {
+    width: 144px; 
+    height: 144px;
+    border-radius: 144px;
+}
+
+.card-title__element {
+    display: block;
+    font-family: 'RF Dewi';
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 114%;
+    text-align: center;
+    color: #000;
+
+}
+
+.card {
+    padding: 10px;
+    margin: 0 6px
+}
+
+.card-img {
+    margin-bottom: 9px;
+}

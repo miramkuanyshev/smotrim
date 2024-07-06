@@ -1,0 +1,17 @@
+.slider-container {
+    max-width: 1406px;
+    margin: 0 auto;      
+    position: relative;    
+    overflow: hidden;  
+}
+
+.slider-item {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    width: 100%;
+}
+
+.slider {
+    transform: translate(0%, 110%);
+}

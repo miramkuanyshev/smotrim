@@ -34,6 +34,8 @@
     box-sizing: border-box;
     transition: 0.5s;
 }
+
+
 .information-header__photo {
     max-width: 200px;
     border-radius: 8px;
@@ -63,6 +65,10 @@
     box-sizing: border-box;
 }
 
+.information-anons, .information-body {
+    text-align: justify;
+}
+
 .information::-webkit-scrollbar {
     width: 10px;
     height: 50px;
@@ -85,8 +91,8 @@
 
 .information-header__button{        
     position: absolute;
-    right: 6%;
-    top: 2%;
+    right:12%;
+    top: 5%;
     cursor: pointer;
 }
 
@@ -128,4 +134,26 @@
 .information-header__button:hover:before {
     background-color: #D52B1E;
     border: 1px solid #D52B1E;
+}
+
+@media (max-width: 425px) {
+    .popup__content {
+        width: 300px;
+        height: 350px;   
+        padding: 10px;
+    }
+
+    .information-header{
+        display: block;
+        position: relative;
+    }
+    .information-header__title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .information-header__photo {
+        display: block;
+        margin: 20px auto 0px auto;
+    }
 }

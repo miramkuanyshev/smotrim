@@ -61,7 +61,7 @@ h1 {
     border: 3px solid #669999;
     border-radius: 10px;
     box-sizing: border-box;
-    background: linear-gradient( rgb(45, 180, 236, 0.3), rgb(45, 180, 236, 0.1)), url(../images/word.png) no-repeat;
+    background: linear-gradient( rgb(45, 180, 236, 0.3), rgb(45, 180, 236, 0.1)), url(../images/planet.png) no-repeat;
     background-size: cover;
     transform: rotateY(180deg);
     position: absolute;

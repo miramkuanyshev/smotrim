@@ -47,7 +47,7 @@ h1 {
     border-radius: 10px;
     padding: 15px;
     box-sizing: border-box;
-    background: linear-gradient( rgb(45, 180, 236, 0.3), rgb(45, 180, 236, 0.1)), url(../images/word.png) no-repeat;
+    background: linear-gradient( rgb(45, 180, 236, 0.3), rgb(45, 180, 236, 0.1)), url(../images/planet.png) no-repeat;
     background-size: cover;
     position: absolute;
     top: 0;

@@ -13,6 +13,7 @@ build
 dist-ssr
 *.local
 .vite
+deploy-react
 
 # Editor directories and files
 .vscode/*

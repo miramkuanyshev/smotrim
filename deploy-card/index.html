@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <title>Оплата банковской картой</title>
+    
+</head>
+<body>
+    
+    <div id="app">
+        <h1>Оплатите банковской картой</h1>
+        <section class="container">
+            <div class="card-container">
+                <div class="card" :class="{ flip: isFlip }">
+                    <div class="card-front">
+                        <h2 class="card-front__title">
+                            Credit Card
+                        </h2>
+                        <div class="card-front__pay pay">
+                            <div class="pay-chip"></div>
+                            <div class="pay-nft"></div>                    
+                        </div>
+                        <div class="card-font__number number">
+                            <div class="number-block">
+                                <span class="number-block__element">{{num1 || '####'}}</span>
+                                <span class="number-block__element">{{num2 || '####'}}</span>
+                                <span class="number-block__element">{{num3 || '####'}}</span>
+                                <span class="number-block__element">{{num4 || '####'}}</span>
+                            </div>
+                            <span class="number-footer">{{num1 || '####'}}</span>
+                        </div>
+                        <div class="card-font__footer footer">
+                            <div class="footer-left">
+                                <div class="footer-left__date date">
+                                    <div class="date-valid">
+                                        <span class="date-valid__text">valid</span>
+                                        <span class="date-valid__text">true</span>
+                                    </div>
+                                    <span  class="date__element">{{month || '00'}}</span>
+                                    <span class="date__slash">/</span>
+                                    <span class="date__element">{{year || '00'}}</span>
+                                </div>
+                                <div v-bind:style="{ 'font-size': fontSize }" class="footer-left__familly">{{family || 'cardholder'}} {{name || 'name'}}</div>
+                            </div>
+                            <div class="footer-right">
+                                <div class="footer-right__logo">
+        
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="card-back">
+                        <div class="card-back__stripe"></div>
+                        <div class="card-back__cvc cvc">
+                            <div class="cvc-stripe"></div>
+                            <div class="cvc-number">{{cvc || '123'}}</div>
+                        </div>
+                        <div class="card-back__number number">
+                            <div class="number-block">
+                                <span class="number-block__element">{{num1 || '####'}}</span>
+                                <span class="number-block__element">{{num2 || '####'}}</span>
+                                <span class="number-block__element">{{num3 || '####'}}</span>
+                                <span class="number-block__element">{{num4 || '####'}}</span>
+                            </div>
+                        </div>
+                        <div class="card-back__footer footer">
+                            <div class="footer-left">
+                                <div class="footer-left__date date">
+                                    <span class="date__element">{{month || '00'}}</span>
+                                    <span class="date__slash">/</span>
+                                    <span class="date__element">{{year || '00'}}</span>
+                                </div>
+                                <div :style="{ 'font-size': fontSize }" class="footer-left__familly">{{family || 'cardholder'}} {{name || 'name'}}</div>
+                            </div>
+                            <div class="footer-text">
+                                <span class="footer-text__title">Simple text</span>
+                                <p class="footer-text__element">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus perspiciatis autem nobis asperiores harum, dicta unde</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+    
+            </div>
+    
+            <form class="card-form" action="">
+                <input maxlength="16" @click="goFont" v-on:input="handleInput" placeholder="Введите номер карты">
+                <div class="date-input">
+                    <input @click="goFont"  v-on:input="handleMonth" id="month" placeholder="месяц" maxlength="2">
+                    <input @click="goFont" v-on:input="handleYear" id="years" placeholder="год" maxlength="2">
+                </div>
+                <input @click="goFont" v-on:input="handleName" id="name" type="text" placeholder="Имя">
+                <input @click="goFont" v-on:input="handleFamily" id="family" type="text" placeholder="Фамилия">                
+                <input @click="goBack" v-on:input="handleCvc" id="cvc" type="text" placeholder="CVC">
+                <div class="errors-block">{{errors}}</div>
+                <button @click.prevent="validate" class="card-form__button">оплатить</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>   
+</body>
+</html>

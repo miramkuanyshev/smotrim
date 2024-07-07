@@ -1,0 +1,308 @@
+@font-face {
+    font-family: 'CreditCard';
+    src: url(../fonts/CreditCard.ttf);
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url(../fonts/OpenSans-Variable.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'OpenSans';
+    font-size: 1.5rem;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    
+}
+
+.card-container {
+    perspective: 600;
+}
+
+.card {
+    width: 18rem;
+    height: 11rem;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+    transition: 0.6s;
+	transform-style: preserve-3d;
+    margin-bottom: 15px;
+}
+.card-front {
+    width: 18rem;
+    height: 11rem;
+    margin: 0 auto;
+    border: 3px solid #669999;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    background: linear-gradient( rgb(45, 180, 236, 0.3), rgb(45, 180, 236, 0.1)), url(../images/word.png) no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    backface-visibility: hidden;
+    z-index: 2;
+}
+.card-back {
+    width: 18rem;
+    height: 11rem;
+    margin: 0 auto;
+    border: 3px solid #669999;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: linear-gradient( rgb(45, 180, 236, 0.3), rgb(45, 180, 236, 0.1)), url(../images/word.png) no-repeat;
+    background-size: cover;
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+}
+.flip {
+    transform: rotateY(180deg);
+}
+
+.card-front__title {
+    font-family: 'OpenSans';
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #f3f3f3;
+    font-size: 1.5rem;
+    text-align: right;
+    margin: 0;
+}
+
+.pay-chip {
+    background-image: url(../images/chip.png);
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.pay-nft {
+    background-image: url(../images/nft.png);
+    height: 1.5rem;
+    width: 1.5rem;
+    background-size: contain;
+    margin-top: 6px;
+}
+
+.card-front__pay {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-font__number{
+    font-family: 'CreditCard';
+    font-size: 1rem;
+    color: #f3f3f3;
+    font-weight: 400;
+}
+
+.number-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.number-block__element {
+    display: block;
+    padding: 0;
+}
+
+.number-footer {
+    color: #f3f3f3;
+    font-size: 0.5rem;
+    display: block;
+}
+
+.card-font__footer {
+    font-family: 'CreditCard';
+    color: #f3f3f3;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-valid {
+    text-transform: uppercase;
+    font-family: 'OpenSans';
+    font-size: 0.5rem;
+    margin-right: 2px;
+}
+
+.footer-left {
+    width: 60%;
+}
+
+.footer-left__date {
+    display: flex;
+    justify-content: end;
+}
+
+
+.date-valid__text {
+    display: block;
+    margin-top: -2px;
+}
+
+.date__element {
+    font-size: 0.9rem;
+}
+
+.date__slash {
+    font-size: 0.8rem;
+}
+
+.footer-left__familly {
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.footer-right__logo {
+    height: 2rem;
+    width: 5rem;
+    border: 3px solid #669999;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+}
+
+.card-back__stripe {
+    background-color: rgb(48, 48, 48);
+    height: 2.5rem;
+    width: 100%;
+    margin: 10px 0 10px 0;
+}
+
+.card-back__cvc {
+    height: 1.8rem;
+    width: 95%;
+    background-color: #f3f3f3;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.cvc-number {
+    padding: 4px;
+    font-family: 'OpenSans';
+    font-size: 0.8rem;
+}
+
+.card-back__number {
+    padding: 5px 15px;
+    font-family: 'CreditCard';
+    font-size: 1rem;
+    color: #2477a3;    
+    transform: scale(-1,  1);
+}
+
+.card-back__footer {
+    font-family: 'CreditCard';
+    color: #2477a3;
+    display: flex;
+    
+    transform: scale(-1,  1);
+}
+
+.cvc-stripe {
+    background: url(../images/text-bg.svg);
+    height: 100%;
+    width: 80%;
+}
+
+.footer-text {
+    font-family: 'OpenSans';
+    font-size: 0.5rem;
+    width: 30%;
+    color: #f3f3f3;    
+    transform: scale(-1,  1);
+}
+
+.footer-text__title {
+    text-transform: uppercase;
+}
+.footer-text__element {
+    font-size: 0.3rem;
+    text-align: justify;
+    margin: 0 8px 0 0;
+}
+
+.card-form {
+    width: 18rem;
+    padding: 20px 0px;
+    margin: 0 auto;
+    border: 3px solid #669999;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.card-form>input, .date-input>input  {
+    border: 3px solid #669999;
+    border-radius: 3px;
+    font-family: 'OpenSans';
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    height: 1.5rem;
+    outline: none;
+
+}
+
+.card-form>input {
+    width: 75%;
+    margin: 10px auto;
+}
+
+.date-input>input  {
+    width: 25%;
+    margin: 0 auto;
+    -webkit-appearance: none;
+}
+
+.date-input{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 10px auto;
+}
+
+
+.errors-block {
+    color: red;
+    height: 1rem;
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'OpenSans';
+    font-size: 0.5rem;
+}
+
+.card-form__button {
+    display: block;
+    background-color: #2bb2ea;
+    border: 3px solid #669999;
+    border-radius: 3px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    color: #f3f3f3;
+    font-family: 'OpenSans';
+    width: 50%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    
+}
+
+#cvc {
+    margin-bottom: 0px;
+}

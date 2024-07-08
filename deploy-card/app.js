@@ -23,9 +23,11 @@ const { createApp, ref } = Vue
       const cardNameChech= ref(false);
       const cardFamilyChech= ref(false);
       const cardCvcChech= ref(false);
+      const nameLenght  =  4;
+      const familyLenght  =  10;
       
       return {
-        num1, num2, num3, num4, month, year, name, family, fontSize, cvc, inputPattern, letterPattern, isFlip, errors,  cardNumberChech, cardMonthChech, cardYearChech, cardCvcChech, cardFamilyChech, cardNameChech,      }
+        num1, num2, num3, num4, month, year, name, family, fontSize, cvc, inputPattern, letterPattern, isFlip, errors,  cardNumberChech, cardMonthChech, cardYearChech, cardCvcChech, cardFamilyChech, cardNameChech, nameLenght,  familyLenght}
     },
     methods: {
       handleInput(e) {
@@ -126,16 +128,22 @@ const { createApp, ref } = Vue
         }
       },
       fondSizeControls()  {
-        if(this.name.length + this.family.length > 23) {
+        if (this.name) {
+          this.nameLenght = this.name.length;
+        }
+        if(this.family)  {
+          this.familyLenght = this.family.length;
+        }
+        if(this.nameLenght + this.familyLenght > 23) {
           this.fontSize = '0.6rem';
         }
-        if(this.name.length + this.family.length >=  20 && this.name.length + this.family.length < 23)  {
+        if(this.nameLenght + this.familyLenght >=  20 && this.nameLenght + this.familyLenght < 23)  {
           this.fontSize = '0.7rem';
         }
-        if(this.name.length + this.family.length >=  15 && this.name.length + this.family.length < 20)  {
+        if(this.nameLenght + this.familyLenght >=  15 && this.nameLenght + this.familyLenght < 20)  {
           this.fontSize = '0.8rem';
         }
-        if (this.name.length + this.family.length <  15) {
+        if (this.nameLenght + this.familyLenght <  15) {
           this.fontSize = '1rem';
         }
 
@@ -146,9 +154,9 @@ const { createApp, ref } = Vue
           e.target.style.borderColor = 'red';
           this.cardNameChech=false;
           this.errors  = 'Введите имя латиницей';
-        } else if (e.target.value.length + this.family.length > 25) {
+        } else if (e.target.value.length + this.familyLenght > 25) {
           e.target.value = e.target.value.slice(0, -1);
-          his.cardNameChech=false;
+          this.cardNameChech=false;
           e.target.style.borderColor = 'red';
           this.errors  = 'Превышено максимальное количество символов';
         } else if (e.target.value == 0) {
@@ -171,7 +179,7 @@ const { createApp, ref } = Vue
           this.cardFamilyChech=false;
           e.target.style.borderColor = 'red';
           this.errors  = 'Введите фамилию латиницей';
-        } else if (e.target.value.length + this.name.length > 25) {
+        } else if (e.target.value.length + this.nameLenght > 25) {
           e.target.value = e.target.value.slice(0, -1);
           this.cardFamilyChech=false;
           e.target.style.borderColor = 'red';

@@ -202,7 +202,11 @@ const { createApp, ref } = Vue
           this.cardCvcChech=false;
           e.target.style.borderColor = 'red';
           this.errors  = 'Превышено максимальное количество символов';
-        } else if (e.target.value.length == 0) {
+        } else if (e.target.value.length < 3) {
+          this.cardCvcChech=false;
+          e.target.style.borderColor = 'red';
+          this.errors  = 'Минимальное количество символов - 3';
+        }else if (e.target.value.length == 0) {
           this.cvc  =  '123';
           this.cardCvcChech=false;
           this.errors  = 'Введите CVC- код с обратной стороны карты';
